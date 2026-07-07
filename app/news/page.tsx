@@ -15,7 +15,7 @@ export default async function NewsPage() {
       <div className="mt-10 space-y-12">
         {items.map((item) => (
           <article key={item.id} className="border-b border-black/10 pb-12 last:border-0">
-            {item.date ? <p className="text-sm text-black/50">{item.date}</p> : null}
+            {item.date ? <p className="font-mono text-sm text-black/50">{item.date}</p> : null}
             <h2 className="mt-1 text-xl font-medium">{item.title}</h2>
             {item.image ? (
               <div className="relative mt-4 aspect-16/9 max-w-xl overflow-hidden bg-black/5">
@@ -29,7 +29,7 @@ export default async function NewsPage() {
                 href={item.externalLinkUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-4 inline-block text-sm underline underline-offset-4 hover:opacity-60"
+                className="mt-4 inline-block font-mono text-sm underline underline-offset-4 hover:opacity-60"
               >
                 {item.externalLinkLabel ?? "Read more"}
               </a>

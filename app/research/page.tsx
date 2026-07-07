@@ -18,15 +18,15 @@ export default async function ResearchPage() {
             <div className="flex items-baseline gap-3">
               <h2 className="text-xl font-medium">{item.title}</h2>
               {item.status ? (
-                <span className="rounded-full bg-black/5 px-2.5 py-0.5 text-xs text-black/60">
+                <span className="rounded-full bg-black/5 px-2.5 py-0.5 font-mono text-xs text-black/60">
                   {item.status}
                 </span>
               ) : null}
             </div>
-            {item.year ? <p className="mt-1 text-sm text-black/50">{item.year}</p> : null}
+            {item.year ? <p className="mt-1 font-mono text-sm text-black/50">{item.year}</p> : null}
             <RichText body={item.description} className="mt-4" />
             {item.linksOrPapers ? (
-              <div className="mt-4 space-y-1 text-sm">
+              <div className="mt-4 space-y-1 font-mono text-sm">
                 {item.linksOrPapers
                   .split("\n")
                   .map((s) => s.trim())

@@ -29,16 +29,16 @@ export default async function ProfessionalWorkDetailPage({ params }: Props) {
     <article className="space-y-10">
       <header>
         <h1 className="text-3xl font-semibold">{project.title}</h1>
-        {meta ? <p className="mt-2 text-black/60">{meta}</p> : null}
+        {meta ? <p className="mt-2 font-mono text-black/60">{meta}</p> : null}
         {project.categories.length > 0 ? (
-          <p className="mt-1 text-sm text-black/50">{project.categories.join(" · ")}</p>
+          <p className="mt-1 font-mono text-sm text-black/50">{project.categories.join(" · ")}</p>
         ) : null}
         {project.externalLink ? (
           <a
             href={project.externalLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-4 inline-block text-sm underline underline-offset-4 hover:opacity-60"
+            className="mt-4 inline-block font-mono text-sm underline underline-offset-4 hover:opacity-60"
           >
             Visit project
           </a>

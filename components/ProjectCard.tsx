@@ -30,7 +30,7 @@ export function ProjectCard({
       </div>
       <div className="mt-3">
         <h3 className="text-base font-medium">{title}</h3>
-        {subtitle ? <p className="text-sm text-black/60">{subtitle}</p> : null}
+        {subtitle ? <p className="font-mono text-sm text-black/60">{subtitle}</p> : null}
         {summary ? <p className="mt-1 line-clamp-2 text-sm text-black/70">{summary}</p> : null}
       </div>
     </Link>

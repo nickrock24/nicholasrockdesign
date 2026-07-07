@@ -21,7 +21,7 @@ export default async function HomePage() {
         <section>
           <div className="flex items-baseline justify-between">
             <h2 className="text-xl font-semibold">Featured Work</h2>
-            <Link href="/professional-work" className="text-sm hover:opacity-60">
+            <Link href="/professional-work" className="font-mono text-sm hover:opacity-60">
               View all
             </Link>
           </div>
@@ -44,7 +44,7 @@ export default async function HomePage() {
         <section>
           <div className="flex items-baseline justify-between">
             <h2 className="text-xl font-semibold">Latest News</h2>
-            <Link href="/news" className="text-sm hover:opacity-60">
+            <Link href="/news" className="font-mono text-sm hover:opacity-60">
               View all
             </Link>
           </div>
@@ -52,7 +52,7 @@ export default async function HomePage() {
             {latestNews.map((item) => (
               <li key={item.id}>
                 <p className="font-medium">{item.title}</p>
-                {item.date ? <p className="text-sm text-black/60">{item.date}</p> : null}
+                {item.date ? <p className="font-mono text-sm text-black/60">{item.date}</p> : null}
               </li>
             ))}
           </ul>

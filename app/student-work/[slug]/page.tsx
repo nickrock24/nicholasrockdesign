@@ -31,7 +31,7 @@ export default async function StudentWorkDetailPage({ params }: Props) {
     <article className="space-y-10">
       <header>
         <h1 className="text-3xl font-semibold">{project.title}</h1>
-        {meta ? <p className="mt-2 text-black/60">{meta}</p> : null}
+        {meta ? <p className="mt-2 font-mono text-black/60">{meta}</p> : null}
       </header>
 
       <RichText body={project.description} />
