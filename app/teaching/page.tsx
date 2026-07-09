@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { getPageBySlug } from "@/lib/content/pages";
 import { ImageGallery } from "@/components/ImageGallery";
 import { RichText } from "@/components/RichText";
+import { PageHeader } from "@/components/PageHeader";
 
 export const metadata: Metadata = { title: "Teaching" };
 
@@ -12,7 +13,7 @@ export default async function TeachingPage() {
 
   return (
     <article className="space-y-10">
-      <h1 className="text-3xl font-semibold">{page.title}</h1>
+      <PageHeader title={page.title} />
       <RichText body={page.body} />
       <ImageGallery images={page.images} />
     </article>

@@ -8,15 +8,17 @@ export function ProjectCard({
   subtitle,
   summary,
   image,
+  className,
 }: {
   href: string;
   title: string;
   subtitle?: string | null;
   summary?: string | null;
   image?: ContentImage | null;
+  className?: string;
 }) {
   return (
-    <Link href={href} className="group block">
+    <Link href={href} className={`group block ${className ?? ""}`}>
       <div className="relative aspect-4/3 overflow-hidden bg-black/5">
         {image ? (
           <Image

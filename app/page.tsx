@@ -2,6 +2,7 @@ import Link from "next/link";
 import { listProfessionalWork } from "@/lib/content/professional-work";
 import { listNews } from "@/lib/content/news";
 import { ProjectCard } from "@/components/ProjectCard";
+import { PageHeader } from "@/components/PageHeader";
 
 export default async function HomePage() {
   const [projects, news] = await Promise.all([listProfessionalWork(), listNews()]);
@@ -10,12 +11,11 @@ export default async function HomePage() {
 
   return (
     <div className="space-y-16">
-      <section>
-        <h1 className="text-3xl font-semibold">Nicholas Rock</h1>
-        <p className="mt-2 max-w-2xl text-black/70">
+      <PageHeader title="Nicholas Rock">
+        <p className="text-black/70">
           Designer and educator working across professional practice, teaching, and research.
         </p>
-      </section>
+      </PageHeader>
 
       {featured.length > 0 && (
         <section>

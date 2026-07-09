@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { listStudentWork } from "@/lib/content/student-work";
 import { ProjectCard } from "@/components/ProjectCard";
+import { PageHeader } from "@/components/PageHeader";
 
 export const metadata: Metadata = { title: "Student Work" };
 
@@ -9,7 +10,7 @@ export default async function StudentWorkPage() {
 
   return (
     <div>
-      <h1 className="text-3xl font-semibold">Student Work</h1>
+      <PageHeader title="Student Work" />
       <div className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
         {projects.map((project) => (
           <ProjectCard

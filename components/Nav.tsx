@@ -12,7 +12,7 @@ const LINKS = [
 export function Nav() {
   return (
     <header className="border-b border-black/10">
-      <div className="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-4 px-6 py-5 font-mono">
+      <div className="mx-auto flex w-full max-w-[1800px] flex-wrap items-center justify-between gap-4 px-6 py-5 font-mono sm:px-10 lg:px-16">
         <Link href="/" className="text-sm font-semibold tracking-wide uppercase">
           Nicholas Rock
         </Link>

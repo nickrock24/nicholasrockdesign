@@ -3,6 +3,7 @@ import Image from "next/image";
 import { listNews } from "@/lib/content/news";
 import { YouTubeEmbedList } from "@/components/YouTubeEmbed";
 import { RichText } from "@/components/RichText";
+import { PageHeader } from "@/components/PageHeader";
 
 export const metadata: Metadata = { title: "News" };
 
@@ -11,7 +12,7 @@ export default async function NewsPage() {
 
   return (
     <div>
-      <h1 className="text-3xl font-semibold">News</h1>
+      <PageHeader title="News" />
       <div className="mt-10 space-y-12">
         {items.map((item) => (
           <article key={item.id} className="border-b border-black/10 pb-12 last:border-0">

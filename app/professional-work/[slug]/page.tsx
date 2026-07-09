@@ -4,6 +4,7 @@ import { getProfessionalWorkBySlug, listProfessionalWork } from "@/lib/content/p
 import { ImageGallery } from "@/components/ImageGallery";
 import { YouTubeEmbedList } from "@/components/YouTubeEmbed";
 import { RichText } from "@/components/RichText";
+import { PageHeader } from "@/components/PageHeader";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -27,25 +28,29 @@ export default async function ProfessionalWorkDetailPage({ params }: Props) {
 
   return (
     <article className="space-y-10">
-      <header>
-        <h1 className="text-3xl font-semibold">{project.title}</h1>
-        {meta ? <p className="mt-2 font-mono text-black/60">{meta}</p> : null}
-        {project.categories.length > 0 ? (
-          <p className="mt-1 font-mono text-sm text-black/50">{project.categories.join(" · ")}</p>
-        ) : null}
-        {project.externalLink ? (
-          <a
-            href={project.externalLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-4 inline-block font-mono text-sm underline underline-offset-4 hover:opacity-60"
-          >
-            Visit project
-          </a>
-        ) : null}
-      </header>
+      <PageHeader title={project.title}>
+        <RichText body={project.description} />
+      </PageHeader>
 
-      <RichText body={project.description} />
+      {meta || project.categories.length > 0 || project.externalLink ? (
+        <div className="font-mono text-sm text-black/60">
+          {meta ? <p>{meta}</p> : null}
+          {project.categories.length > 0 ? (
+            <p className="mt-1 text-black/50">{project.categories.join(" · ")}</p>
+          ) : null}
+          {project.externalLink ? (
+            <a
+              href={project.externalLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-4 inline-block underline underline-offset-4 hover:opacity-60"
+            >
+              Visit project
+            </a>
+          ) : null}
+        </div>
+      ) : null}
+
       <YouTubeEmbedList raw={project.youtubeUrls} title={project.title} />
       <ImageGallery images={project.images} />
     </article>
